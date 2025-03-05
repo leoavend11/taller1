@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Raleway', sans-serif;
-            background: linear-gradient(135deg, #f5af19, #f12711); 
+            background: linear-gradient(135deg, #f5af19, #f12711);
             color: #fff;
             text-align: center;
             margin: 0;
@@ -40,6 +40,29 @@
             height: 300px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease-in-out;
+        }
+        .series img:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Optimización para móviles */
+        @media (max-width: 600px) {
+            .series {
+                flex-direction: column;
+                align-items: center;
+            }
+            .series img {
+                width: 150px;
+                height: auto;
+            }
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -50,9 +73,10 @@
         <p><strong>Hobbies:</strong> Leer, Programar, Ver Series</p>
         <h2>Series Favoritas</h2>
         <div class="series">
-            <img src="https://upload.wikimedia.org/wikipedia/en/0/08/Breaking_Bad_title_card.png" alt="Breaking Bad">
-            <img src="data:image/jpeg;base64,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" alt="Dark">
+            <img src="https://pics.filmaffinity.com/Dark_Serie_de_TV-111203947-large.jpg" alt="Breaking Bad">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxqIShtDyxflXXOS0JpgJnasqB0qNaLZynTg&s" alt="Dark">
         </div>
     </div>
 </body>
 </html>
+
